@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CZX</title>
+<link rel="Shortcut Icon" href="./ICON.ico" type="image/x-icon" />
+<style>
+ul {
+    list-style-type: none;
+    border-radius :9px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(60, 60, 60);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #000000;
+    transition-duration:1s;
+}
+
+.active {
+    background-color: #333;
+}
+
+.active:hover {
+    background-color: #000000;
+    transition-duration:1s;
+}
+
+.circle-breath {
+        position: absolute;
+        left: 33.333%;
+        background: rgba(0, 26, 255, 0.75);
+        box-shadow: 0 0 0 0 rgb(57, 12, 161);
+        height: 36px;
+        width: 36px;
+        border-radius: 50%;
+        animation: donghua 2.4s infinite;
+        filter: blur(5px);
+        }
+
+@keyframes donghua {
+    0% {
+        transform: scale(0.60);
+        /* 注意rgba中的a的设置 */
+        box-shadow: 0 0 0 0 rgb(54, 0, 99);
+    }
+
+    50% {
+        transform: scale(1);
+        box-shadow: 0 0 0 36px rgba(4, 226, 52, 0.12);
+    }
+
+    100% {
+        transform: scale(0.60);
+        box-shadow: 0 0 0 0 rgba(204, 73, 152, 0%);
+    }
+
+}
+h1 {
+        margin-top: 120px;
+        text-align: center;
+        font-size: 90px;
+        color: white;
+        /* 贝塞尔曲线动画 */
+        animation: enterenter1 1s ;
+}
+
+@keyframes enterenter1 {
+    0% {
+        /* 加上文字间距 */
+        letter-spacing: 1em;
+        /* Z轴变换 */
+        transform: translateZ(300px);
+        /* filter: blur(); 像素模糊效果 */
+        filter: blur(12px);
+        /* 透明度也要改变 */
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateZ(100px);
+        filter: blur(0);
+        opacity: 1;
+    }    
+}
+
+h2 {
+        margin-top: 120px;
+        text-align: center;
+        font-size: 50px;
+        color: white;
+        /* 贝塞尔曲线动画 */
+        animation: wait1 1s, enterenter2 1.8s ;
+}
+
+@keyframes wait1{
+    0% {opacity: 0}
+    100% {opacity: 0}
+}
+
+@keyframes enterenter2 {
+    0% {
+        /* 加上文字间距 */
+        letter-spacing: 1em;
+        /* Z轴变换 */
+        transform: translateZ(300px);
+        /* filter: blur(); 像素模糊效果 */
+        filter: blur(12px);
+        /* 透明度也要改变 */
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateZ(12px);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+h3 {
+        margin-top: 120px;
+        text-align: center;
+        font-size: 20px;
+        color: white;
+        /* 贝塞尔曲线动画 */
+        animation: wait1 1s, enterenter2 1.8s ;
+    
+}
+
+@keyframes play{
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.music {
+    position: absolute;
+            right: 0px;
+            width: 175px;
+            height: 100px;
+            display: flex;
+            animation: play 2s;
+        }
+
+        .music span {
+            width: 6px;
+            border-radius: 18px;
+            margin-right: 6px;
+        }
+
+        .music span:nth-child(1) {
+            /* 时间递增，参差不齐的效果 */
+            animation: bar1 2s 0.2s infinite linear;
+        }
+
+        .music span:nth-child(2) {
+            animation: bar2 2s 0.4s infinite linear;
+        }
+
+        .music span:nth-child(3) {
+            animation: bar3 2s 0.6s infinite linear;
+        }
+
+        .music span:nth-child(4) {
+            animation: bar4 2s 0.8s infinite linear;
+        }
+
+        .music span:nth-child(5) {
+            animation: bar5 2s 1.0s infinite linear;
+        }
+
+        .music span:nth-child(6) {
+            animation: bar6 2s 1.2s infinite linear;
+        }
+
+        .music span:nth-child(7) {
+            animation: bar7 2s 1.4s infinite linear;
+        }
+
+        .music span:nth-child(8) {
+            animation: bar8 2s 1.6s infinite linear;
+        }
+
+        .music span:nth-child(9) {
+            animation: bar9 2s 1.8s infinite linear;
+        }
+
+        @keyframes bar1 {
+            0% {
+                background: #f677b0;
+                margin-top: 25%;
+                height: 10%;
+            }
+
+            50% {
+                background: #f677b0;
+                height: 100%;
+                margin-top: 0%;
+            }
+
+            100% {
+                background: #f677b0;
+                height: 10%;
+                margin-top: 25%;
+            }
+        }
+
+        @keyframes bar2 {
+            0% {
+                background: #df7ff2;
+                margin-top: 25%;
+                height: 10%;
+            }
+
+            50% {
+                background: #df7ff2;
+                height: 100%;
+                margin-top: 0%;
+            }
+
+            100% {
+                background: #df7ff2;
+                height: 10%;
+                margin-top: 25%;
+            }
+        }
+
+        @keyframes bar3 {
+            0% {
+                background: #8c7ff2;
+                margin-top: 25%;
+                height: 10%;
+            }
+
+            50% {
+                background: #8c7ff2;
+                height: 100%;
+                margin-top: 0%;
+            }
+
+            100% {
+                background: #8c7ff2;
+                height: 10%;
+                margin-top: 25%;
+            }
+        }
+
+        @keyframes bar4 {
+            0% {
+                background: #7fd0f2;
+                margin-top: 25%;
+                height: 10%;
+            }
+
+            50% {
+                background: #7fd0f2;
+                height: 100%;
+                margin-top: 0%;
+            }
+
+            100% {
+                background: #7fd0f2;
+                height: 10%;
+                margin-top: 25%;
+            }
+        }
+
+        @keyframes bar5 {
+            0% {
+                background: #7ff2d3;
+                margin-top: 25%;
+                height: 10%;
+            }
+
+            50% {
+                background: #7ff2d3;
+                height: 100%;
+                margin-top: 0%;
+            }
+
+            100% {
+                background: #7ff2d3;
+                height: 10%;
+                margin-top: 25%;
+            }
+        }
+
+        @keyframes bar6 {
+            0% {
+                background: #7ff2a0;
+                margin-top: 25%;
+                height: 10%;
+            }
+
+            50% {
+                background: #7ff2a0;
+                height: 100%;
+                margin-top: 0%;
+            }
+
+            100% {
+                background: #7ff2a0;
+                height: 10%;
+                margin-top: 25%;
+            }
+        }
+
+        @keyframes bar7 {
+            0% {
+                background: #adf27f;
+                margin-top: 25%;
+                height: 10%;
+            }
+
+            50% {
+                background: #adf27f;
+                height: 100%;
+                margin-top: 0%;
+            }
+
+            100% {
+                background: #adf27f;
+                height: 10%;
+                margin-top: 25%;
+            }
+        }
+
+        @keyframes bar8 {
+            0% {
+                background: #e7f27f;
+                margin-top: 25%;
+                height: 10%;
+            }
+
+            50% {
+                background: #e7f27f;
+                height: 100%;
+                margin-top: 0%;
+            }
+
+            100% {
+                background: #e7f27f;
+                height: 10%;
+                margin-top: 25%;
+            }
+        }
+
+        @keyframes bar9 {
+            0% {
+                background: #ecaa64;
+                margin-top: 25%;
+                height: 10%;
+            }
+
+            50% {
+                background: #ecaa64;
+                height: 100%;
+                margin-top: 0%;
+            }
+
+            100% {
+                background: #ecaa64;
+                height: 10%;
+                margin-top: 25%;
+            }
+        }
+
+</style>
+</head>
+<body style="background-color: #000000;">
+
+<ul>
+  <li><a class="index" style="color: #000000;font-weight: bold;" href="./index.html">首页</a></li>
+  <li><a href="./search.html">搜索</a></li>
+  <li><a href="./contact.html">联系</a></li>
+  <li style="float:right"><a class="active" href="./about.html">关于</a></li>
+</ul>
+<br>
+<br>
+<div class="circle-breath"></div>
+<h1>CZX's Website</h1>
+<h2>© 2024 czx</h2>
+<h3>增值电信业务经营许可证：合字B2-20090007•
+    京ICP备10036305号-7•
+    京公网安备11010802022657号</h2>
+<div class="music">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<span class="js-cursor-container"></span>
+</body>
+<script src="special_effect.js"></script>
+</html>

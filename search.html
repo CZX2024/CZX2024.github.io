@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>快速访问</title>
+		<link rel="Shortcut Icon" href="./ICON.ico" type="image/x-icon" />
+		<style type="text/css">
+			li{
+				list-style: none;
+				float: left;
+				width: 80px;
+				line-height: 40px;
+				background-color: orange;
+				border-radius: 6px;
+				font-size: 16px;
+				margin-left: 3px;
+			}
+			li a{
+				text-decoration: none;/**去除下划线**/
+				color: #fff;
+				display: block;/**将行元素改变为块元素从而设置高度**/
+				text-align: center;
+				height: 40px;
+			}
+			li a:hover{ /**正号：放大 负号：缩小**/
+			    background-color: rgba(242, 88, 6, 0.87);
+				border-radius: 6px;
+				transform: scale(1.3) translate(10px,10px);
+				transition-duration:.2s;
+			}
+        	body{
+			background-repeat:no-repeat;
+			background-size:cover;
+			display: flex;
+            flex-direction: column;
+            justify-content: center; /**竖直居中**/
+            align-items: center; /**水平居中**/
+            min-height: 100vh;
+            margin: 0;
+			}
+			.input-container {
+			position: relative;
+			width: 200px; /* 输入框宽度 */
+			margin-bottom: 20px; /* 调整输入框与其他元素间距 */
+			}
+            input {
+			width: calc(100% - 10px); /* 让文本框宽度填满父容器，减去边框宽度 */
+			padding-left: 5px; /* 文本左内边距 */
+			font-size: 16px;
+			height: 30px; /* 正常状态下高度 */
+			border-radius :7px; /* 圆角半径 */
+			border :1px solid #0095ff ;/* 边框颜色与尺寸*/
+			outline:none;/* 清除默认轮廓线条*/
+			background-color :rgba(255,255,255,0.5);/* 背景颜色及透明度*/
+			transition-duration:.3s;/* 过渡动画时间 */
+		    }  
+		    input:focus{
+			background-color :rgba(255,255,255,0.75);
+   			height :60px;
+			width: 550px;
+			}
+			button {
+			display: inline-block;
+            background: linear-gradient(to right, #056605, #0c960c);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            }
+            button:hover {
+            background: linear-gradient(to right, #fd1a71, #442a81);
+            }
+    </style>
+    </style>
+	</head>
+	<body onLoad="loadingChange();">
+		<h1>快捷访问　　　　　　　　　　　　　　　　　　　　　</h1>
+		<ul>
+		    <li><a href="https://www.baidu.com/">百度</a></li>
+		    <li><a href="https://cn.bing.com/">必应</a></li>
+		    <li><a href="https://www.bilibili.com/">哔哩哔哩</a></li>
+		    <li><a href="https://www.zhihu.com/">知乎</a></li>
+		    <li><a href="https://outlook.live.com">OutLook</a></li>
+		    <li><a href="https://tv.cctv.com/epg/index.shtml">CCTV</a></li>
+		    <li><a href="https://www.123pan.com/">123云盘</a></li>
+		    <li><a href="https://chatgpt.com/">GPT</a></li>
+		</ul>
+		<br>
+		<br>
+		<br>
+	<ul>
+		<h1>快捷搜索　　　　　　　　　　　　　　　　　　　　　　</h1>
+		<div class="input-container">
+			<input type="text" id="searchInput" placeholder="请输入内容...">  
+		</div>
+		<button onclick="search_bing()">必应</button>
+		<button onclick="search_quark()">夸克</button>
+		<button onclick="search_baidu()">百度</button>
+		<button onclick="search_translator()">翻译</button>
+		<button onclick="search_bilibili()">哔哩哔哩</button>
+	</ul>
+	<span class="js-cursor-container"></span>
+</body>
+		<script>
+			function loadingChange(){
+				var FileNum,name,img
+				//文件夹内图片文件数量（图片从0开始命名如0.jpg）
+				fileNum = 10
+				//随机数生成一个文件名.jpg
+				name = Math.floor(Math.random()*fileNum)+1
+				img=name
+				var imgs
+				imgs= "background/"+name+".jpg"
+				//得到的imgs图片路径作为背景(图片存放在img文件夹下)
+				//随机获取本地图片后输出到网页
+				document.body.style.backgroundImage="url("+imgs+")" ;	
+			
+				/*自动加载设置超时自动执行实现
+				　setTimeout("loadingChange()",1000); //1000ms后自动执行*/
+			}
+		</script>
+		<script>
+			function search_bing() {
+				var keyword = document.getElementById('searchInput').value;
+				var url = "https://cn.bing.com/search?q=" + keyword;
+				window.location.href = url;
+			}
+			function search_quark() {
+				var keyword = document.getElementById('searchInput').value;
+				var url = "https://s.quark.cn/s?q=" + keyword;
+				window.location.href = url;
+			}
+			function search_baidu() {
+				var keyword = document.getElementById('searchInput').value;
+				var url = "https://www.baidu.com/s?wd=" + keyword;
+				window.location.href = url;
+			}
+			function search_translator() {
+				var keyword = document.getElementById('searchInput').value;
+				var url = "https://cn.bing.com/translator/?text=" + keyword;
+				window.location.href = url;
+			}
+			function search_bilibili() {
+				var keyword = document.getElementById('searchInput').value;
+				var url = "https://search.bilibili.com/all?search_source=1&keyword=" + keyword;
+				window.location.href = url;
+			}
+		</script>
+    <script src="special_effect.js"></script>
+</html>
